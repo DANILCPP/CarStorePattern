@@ -11,7 +11,6 @@ Car::~Car()
 	delete engine; 
 }
 
-
 void Car::ride() 
 {
 	engine->ride_act();
@@ -32,7 +31,6 @@ void Car::warmingUp()
 	engine->warm_engine(); 
 }
 
-
 void Car::set_model_name(string Model_name) 
 {
 	model_name = Model_name; 
@@ -47,7 +45,6 @@ void Car::set_body_type(string Body_type)
 {
 	body_type = Body_type; 
 }
-
 
 void Car::set_car_power_spend(float new_voltazh_spend) 
 {
@@ -68,7 +65,6 @@ void Car::set_car_max_refue_temp_border(int new_temp)
 {
 	engine->set_max_refue_temp_border(new_temp); 
 }
-
 
 void Car::set_engine_type(Engine* engine)
 {
@@ -96,18 +92,27 @@ void Car::set_general_feature(){
 
 	if (choose == 1) {
 		this->engine = new DiselEngine;
+
 		return;
 	}
+
 	if (choose == 2) {
 		this->engine = new ElectroEngine;
+
 		return;
 	}
+
 	if (choose == 3) {
 		this->engine = new GibridEngine(new DiselEngine);
+
 		return;
 	}
 }
-void Car::set_engine_feature() { engine->set_feature(); }
+
+void Car::set_engine_feature()
+{ 
+	engine->set_feature(); 
+}
 
 void Car::Show_model_name() 
 {
@@ -128,7 +133,6 @@ void Car::Show_engine()
 {
 	cout << "\nEngine type: " << engine; 
 }
-
 
 void Car::show_car_max_temp_border() 
 {
